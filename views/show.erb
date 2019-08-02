@@ -1,0 +1,12 @@
+<h1>details</h1>
+<p>Read:  <a href="/show">SUCCESS STORIES</a> <a href="/add_story">ADD YOUR STORY</a> <a href="/edit">edit your story</a> </p>
+
+<%= @story.story%>
+<a href="/stories/<%= @story.id%>/edit"> edit stories</a>
+<form action="/stories/<%= @story.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>delete</button>
+</form>
+<% @stories.each do |story| %>
+<p><a href="/@stories/<%= story.id %>"> </a> <%= story.story %><br>Name:<%= story.name %> </p>
+<% end %> 

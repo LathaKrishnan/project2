@@ -1,0 +1,8 @@
+<nav>
+<p>Read:  <a href="/success_stories">SUCCESS STORIES</a> <a href="/add_story">ADD YOUR STORY</a>  </p>
+</nav>
+
+
+<% @stories.each do |story| %>
+<p><a href="/@stories/<%= story.id %>"> </a> <%= story.story %><br>Name:<%= story.name %> </p>
+<% end %> 

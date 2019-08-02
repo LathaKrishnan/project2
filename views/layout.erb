@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello World</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+<body>
+
+<nav>
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/success_stories">success-stories</a>
+<a href="/contact">contact us</a>
+<a href="/tutorials">tutorials</a>
+<a href="/mock_test">Mock Test</a>
+</nav>
+
+<% if logged_in? %>
+  <div>logged in as <%=current_user.email %></div>
+  <a href=""></a>
+ 
+
+  <form action="/session" method= "post">
+    <input type="hidden" name= "_method" value= "delete">
+    <button>logout</button>
+  </form>
+  <% else %>
+  <a href="/login">login</a>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>
